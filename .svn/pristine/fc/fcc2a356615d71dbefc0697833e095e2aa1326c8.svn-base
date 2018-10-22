@@ -1,0 +1,22 @@
+#include "./movement.h"
+
+int character_move(character_t *target, direction_e dir) {
+
+	switch (dir)
+	{
+		case E_BACKWARD:
+			target->coord[0] -= E_X;
+			return 0;
+		case E_FORWARD:
+			target->coord[0] += E_X;
+			return 0;
+		case E_LEFT:
+			target->coord[1] -= E_Y;
+			return 0;
+		case E_RIGHT:
+			target->coord[1] += E_Y;
+			return 0;
+		default:
+			return 1;
+	}
+}

@@ -1,0 +1,15 @@
+#include <stdlib.h>
+#include "./character.h"
+
+character_t		*make_character(const uint8_t id[36], const int32_t x, const int32_t y, const character_type_e t) {
+	character_t	*c = NULL;
+
+	c = (character_t *) calloc(1, sizeof(character_t));
+	for (uint32_t i = 0; i < 36 && id[i]; ++i) {
+		c->id[i] = id[i];
+	}
+	c->coord[0] = x;
+	c->coord[1] = y;
+	c->type = t;
+	return c;
+}

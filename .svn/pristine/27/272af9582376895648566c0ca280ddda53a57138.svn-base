@@ -1,0 +1,29 @@
+#pragma once
+#include <stdint.h>
+
+#define CHARACTER_UUID_LENGTH 36
+#define CHARACTER_X_AXIS 0
+#define CHARACTER_Y_AXIS 1
+#define CHRACTER_COORD_DIMENSIONS 2
+
+typedef enum	character_type_s {
+	E_PLAYER,
+	E_GUARD,
+	E_CAMERA,
+	E_DOG
+}							character_type_e;
+
+typedef enum	coord_s {
+	E_X = 0,
+	E_Y = 1
+}							coord_e;
+
+typedef struct			character_s
+{
+	uint8_t						id[CHARACTER_UUID_LENGTH];
+	character_type_e	type;
+	int32_t						coord[CHRACTER_COORD_DIMENSIONS];
+}										character_t;
+
+character_t *make_character(const uint8_t id[CHARACTER_UUID_LENGTH], const int32_t x, const int32_t y, const character_type_e t);
+void free_character(character_t *c);

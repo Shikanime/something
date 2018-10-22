@@ -1,0 +1,9 @@
+{
+    "svn.delete.ignoredRulesForDeletedFiles": [
+        "libnot_rp1.a"
+    ],
+    "files.associations": {
+        "stdio.h": "c",
+        "unistd.h": "c"
+    }
+}

@@ -1,0 +1,12 @@
+#pragma once
+#include <stdint.h>
+#include "./character.h"
+
+typedef enum	direction_s {
+	E_FORWARD,
+	E_BACKWARD,
+	E_LEFT,
+	E_RIGHT
+}							direction_e;
+
+uint8_t character_move(character_t *target, const direction_e dir);

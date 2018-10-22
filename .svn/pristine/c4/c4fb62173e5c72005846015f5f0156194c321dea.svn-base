@@ -1,0 +1,16 @@
+#include "./inventory_mock.h"
+#include "./helper.h"
+
+inline void		inventory_should(const uint8_t *s, void (*test)(inventory_t *i)) {
+	inventory_t	*i = NULL;
+
+	print_string((uint8_t *) "[START] - ");
+	print_string((uint8_t *) s);
+	print_character((uint8_t *) '\n');
+	i = new_inventory();
+	test(i);
+	delete_inventory(i);
+	print_string((uint8_t *) "[END] - ");
+	print_string((uint8_t *) s);
+	print_character((uint8_t *) '\n');
+}

@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include "./character.h"
+
+inline character_t		*make_character(const uint8_t id[CHARACTER_UUID_LENGTH], const int32_t x, const int32_t y, const character_type_e t) {
+	character_t	*c = NULL;
+
+	c = (character_t *) calloc(1, sizeof(character_t));
+	for (uint32_t i = 0; i < CHARACTER_UUID_LENGTH && id[i]; ++i) {
+		c->id[i] = id[i];
+	}
+	c->coord[CHARACTER_X_AXIS] = x;
+	c->coord[CHARACTER_Y_AXIS] = y;
+	c->type = t;
+	return c;
+}
+
+inline void free_character(character_t *c) {
+	free(c);
+}

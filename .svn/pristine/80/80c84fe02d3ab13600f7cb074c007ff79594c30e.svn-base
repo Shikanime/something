@@ -1,0 +1,9 @@
+#include "./helper.h"
+
+void	print_character(const uint8_t c) {
+  write(1, &c, 1);
+}
+
+void print_string(const uint8_t s[], const size_t l) {
+	write(1, &s, l);
+}

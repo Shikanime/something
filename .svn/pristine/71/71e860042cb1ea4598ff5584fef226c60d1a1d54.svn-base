@@ -1,0 +1,24 @@
+#include "./movement.h"
+
+#define OFFSET 1
+
+int character_move(character_t *target, direction_e dir) {
+
+	switch (dir)
+	{
+		case E_BACKWARD:
+			target->coord[0] -= OFFSET;
+			return 0;
+		case E_FORWARD:
+			target->coord[0] += OFFSET;
+			return 0;
+		case E_LEFT:
+			target->coord[1] -= OFFSET;
+			return 0;
+		case E_RIGHT:
+			target->coord[1] += OFFSET;
+			return 0;
+		default:
+			return 1;
+	}
+}
