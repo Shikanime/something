@@ -1,4 +1,4 @@
 #pragma once
 #include <stdint.h>
 
-void describe_movement();
+void describe_move();

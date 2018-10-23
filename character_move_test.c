@@ -1,4 +1,5 @@
 #include <assert.h>
+#include "./character_move_test.h"
 #include "./character_move.h"
 #include "./character_look.h"
 #include "./character.h"
@@ -22,7 +23,7 @@ void move_west_forward(character_t *c);
 void move_west_left(character_t *c);
 void move_west_right(character_t *c);
 
-void describe_movement()
+void describe_move()
 {
 	character_should("move north backward", move_north_backward);
 	character_should("move north forward", move_north_forward);

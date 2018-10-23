@@ -1,10 +1,13 @@
 FROM gcc:8 AS build
 WORKDIR /usr/src/app
-ENV OUT_NAME=libnot_rp1
+ENV TEST_BUILD=1
+
+COPY Makefile ./
+RUN make init
+
 COPY *.c ./
 COPY *.h ./
-COPY Makefile ./
-RUN make
+RUN make exec
 
 FROM buildpack-deps:jessie
 WORKDIR /usr/src/app
