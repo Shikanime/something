@@ -7,9 +7,9 @@ typedef enum	cardinal_point_s
 {
 	E_NULL_ORIENTATION = -1,
 	E_NORTH = 0,
-	E_EAST = 90,
+	E_WEST = 90,
 	E_SOUTH = 180,
-	E_WEST = 270
+	E_EAST = 270
 } 						cardinal_point_e;
 
 typedef enum	character_type_s
