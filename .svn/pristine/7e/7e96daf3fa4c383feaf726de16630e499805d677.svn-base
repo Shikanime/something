@@ -1,4 +1,0 @@
-#pragma once
-#include <stdint.h>
-
-int describe_movement(uint32_t argc, uint8_t const *argv[]);

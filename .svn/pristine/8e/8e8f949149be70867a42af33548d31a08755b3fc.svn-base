@@ -1,5 +1,0 @@
-#include "./helper.h"
-
-void	print_character(const uint8_t c) {
-  write(1, &c, 1);
-}

@@ -1,8 +1,0 @@
-#include "./movement_test.h"
-
-int main(int argc, char const *argv[]) {
-	(void) argc;
-	(void) argv;
-
-	describe_movement();
-}

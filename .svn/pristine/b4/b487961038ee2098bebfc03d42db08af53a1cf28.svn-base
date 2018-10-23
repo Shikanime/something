@@ -1,5 +1,0 @@
-#include "./movement_test.h"
-
-int main(int argc, char const *argv[]) {
-	describe_movement((uint32_t) argc, (const uint8_t **) argv);
-}
