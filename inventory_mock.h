@@ -1,4 +1,4 @@
 #pragma once
 #include "./inventory.h"
 
-void inventory_should(const uint8_t *s, void (*test)(inventory_t *ci));
+void inventory_should(const char *s, void (*test)(inventory_t *ci));

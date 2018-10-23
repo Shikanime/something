@@ -1,5 +1,5 @@
 #pragma once
-#include "./character_movement.h"
-#include "./character_orientation.h"
+#include "./character_move.h"
+#include "./character_look.h"
 #include "./character.h"
 #include "./inventory.h"

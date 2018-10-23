@@ -3,34 +3,37 @@
 #include <stdint.h>
 #include "./globa.h"
 
-typedef enum	item_type_e {
+typedef enum	item_type_s
+{
 	E_KEY,
 	E_DOOR,
 	E_GUN,
 	E_KNIFE
-}							item_type_e;
+} 						item_type_e;
 
-typedef struct	item_s {
-	uint32_t			id;
+typedef struct	item_s
+{
+	int 					id;
 	item_type_e		type;
-	int32_t				coord[DIMENSIONS];
+	int						coord[DIMENSIONS];
 }								item_t;
 
 typedef struct								inventory_element_s
 {
-	item_t             					*item;
-	struct inventory_element_s 	*next;
-	struct inventory_element_s 	*precedent;
-}                           	inventory_element_t;
+	item_t											*item;
+	struct inventory_element_s	*next;
+	struct inventory_element_s	*precedent;
+}															inventory_element_t;
 
-typedef struct 				inventory_s {
-	inventory_element_t *first;
-	inventory_element_t *last;
+typedef struct				inventory_s
+{
+	inventory_element_t	*first;
+	inventory_element_t	*last;
 	size_t							size;
 }											inventory_t;
 
 inventory_t *new_inventory();
-item_t *new_item(const uint32_t id, const int32_t x, const int32_t y, const item_type_e t);
+item_t *new_item(const int id, const int x, const int y, const item_type_e t);
 void delete_inventory(inventory_t *i);
 void clear_inventory(inventory_t *i);
 void add_to_inventory(inventory_t *i, item_t *);

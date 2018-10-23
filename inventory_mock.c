@@ -1,16 +1,27 @@
 #include "./inventory_mock.h"
 #include "./helper.h"
 
-inline void		inventory_should(const uint8_t *s, void (*test)(inventory_t *i)) {
-	inventory_t	*i = NULL;
-	item_t	*gun = NULL;
-	item_t	*door = NULL;
-	item_t	*key = NULL;
-	item_t	*kniffe = NULL;
+void do_inventory_should(void (*test)(inventory_t *i));
 
-	print_string((uint8_t *) "[START] - ");
-	print_string((uint8_t *) s);
-	print_character((uint8_t) '\n');
+inline void inventory_should(const char *s, void (*test)(inventory_t *i))
+{
+	print_string((char *)"[START] - ");
+	print_string((char *)s);
+	print_character('\n');
+	do_inventory_should(test);
+	print_string((char *)"[END] - ");
+	print_string((char *)s);
+	print_string((char *)"\n\n");
+}
+
+inline void do_inventory_should(void (*test)(inventory_t *i))
+{
+	inventory_t *i = NULL;
+	item_t *gun = NULL;
+	item_t *door = NULL;
+	item_t *key = NULL;
+	item_t *kniffe = NULL;
+
 	i = new_inventory();
 	door = new_item(634, 0, 0, E_DOOR);
 	gun = new_item(135, 0, 0, E_GUN);
@@ -30,7 +41,4 @@ inline void		inventory_should(const uint8_t *s, void (*test)(inventory_t *i)) {
 	add_to_inventory(i, kniffe);
 	test(i);
 	delete_inventory(i);
-	print_string((uint8_t *) "[END] - ");
-	print_string((uint8_t *) s);
-	print_string((uint8_t *) "\n\n");
 }
