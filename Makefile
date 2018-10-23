@@ -67,9 +67,11 @@ lib: $(OUTNAME).a
 # Compilator files
 
 ifeq ($(TEST_BUILD), 1)
-    SRCS := $(shell find $(ROTDIR)$(SRCDIR) -name "*.c" -type f | cut -sd / -f 3- | tr '\n' ' ')
-else
+    SRCS := $(shell find $(ROTDIR)$(SRCDIR)  ! -name '*e2e.c' -name "*.c" -type f | cut -sd / -f 3- | tr '\n' ' ')
+else ifeq ($(E2E_BUILD), 1)
     SRCS := $(shell find $(ROTDIR)$(SRCDIR) ! -name '*_test.c' -name "*.c" -type f | cut -sd / -f 3- | tr '\n' ' ')
+else
+    SRCS := $(shell find $(ROTDIR)$(SRCDIR) ! -name '*_test.c' ! -name '*_e2e.c' -name "*.c" -type f | cut -sd / -f 3- | tr '\n' ' ')
 endif
 OBJS := $(patsubst %, $(OBJDIR)/%, $(SRCS:c=o))
 DEPS :=$(patsubst %.c, %.d, $(SRCS))

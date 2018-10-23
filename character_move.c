@@ -2,7 +2,6 @@
 #include "./helper.h"
 #include "./character_move.h"
 #include "./character_look.h"
-#include "./helper.h"
 
 void do_character_move_north(character_t *c, const direction_e d);
 void do_character_move_east(character_t *c, const direction_e d);

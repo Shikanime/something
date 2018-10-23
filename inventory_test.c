@@ -2,7 +2,6 @@
 #include "./inventory_test.h"
 #include "./inventory_mock.h"
 #include "./inventory.h"
-#include "./helper.h"
 
 void add_element(inventory_t *i);
 void remove_element(inventory_t *i);
