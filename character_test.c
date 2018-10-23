@@ -6,7 +6,7 @@ void create(character_t *c);
 
 void describe_character()
 {
-	character_should((char *)"create", create);
+	character_should("create", create);
 }
 
 inline void create(character_t *c)

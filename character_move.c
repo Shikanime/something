@@ -116,28 +116,28 @@ inline void do_character_move_west(character_t *c, const direction_e d)
 
 inline void character_move_backward(character_t *c) {
 	c->coord[E_Y] += CHARACTER_MOVE_SPEED;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(c);
-	print_string((char *)"] moves backward.\n");
+	print_string("] moves backward.\n");
 }
 
 inline void character_move_forward(character_t *c) {
 	c->coord[E_Y] -= CHARACTER_MOVE_SPEED;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(c);
-	print_string((char *)"] moves forward.\n");
+	print_string("] moves forward.\n");
 }
 
 inline void character_move_left(character_t *c) {
 	c->coord[E_X] -= CHARACTER_MOVE_SPEED;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(c);
-	print_string((char *)"] moves left.\n");
+	print_string("] moves left.\n");
 }
 
 inline void character_move_right(character_t *c) {
 	c->coord[E_X] += CHARACTER_MOVE_SPEED;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(c);
-	print_string((char *)"] moves right.\n");
+	print_string("] moves right.\n");
 }

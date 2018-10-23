@@ -8,8 +8,8 @@ void remove_element(inventory_t *i);
 
 void describe_inventory()
 {
-	inventory_should((char *)"Inventory should add element", add_element);
-	inventory_should((char *)"Inventory should remove element", remove_element);
+	inventory_should("Inventory should add element", add_element);
+	inventory_should("Inventory should remove element", remove_element);
 }
 
 void add_element(inventory_t *i)

@@ -39,6 +39,7 @@ item_t		*new_item(const int id, const int x, const int y, const item_type_e t)
 
 void delete_element(inventory_element_t *e)
 {
+	free(e->item);
 	free(e);
 }
 
@@ -70,11 +71,13 @@ void									add_to_inventory(inventory_t *i, item_t *d)
 
 item_t *remove_from_inventory(inventory_t *i, int id)
 {
+	item_t	*t = NULL;
+
 	if (i->size != 0)
 	{
 		for (inventory_element_t *e = i->first; e != NULL; e = e->next)
 		{
-			if (e->item->id == (int)id)
+			if (e->item->id == id)
 			{
 				if (e->precedent != NULL)
 				{
@@ -97,8 +100,9 @@ item_t *remove_from_inventory(inventory_t *i, int id)
 				{
 					i->last = NULL;
 				}
-				delete_element(e);
-				return e->item;
+				t = e->item;
+				free(e);
+				return t;
 			}
 		}
 	}
@@ -111,7 +115,7 @@ item_t *find_in_inventory(inventory_t *i, int id)
 	{
 		for (inventory_element_t *e = i->first; e != NULL; e = e->next)
 		{
-			if (e->item->id == (int)id)
+			if (e->item->id == id)
 			{
 				delete_element(e);
 				return e->item;
@@ -149,23 +153,23 @@ void print_inventory(inventory_t *i)
 
 void print_item(item_t *d)
 {
-	print_string((char *)"id : [");
-	print_integer((int)d->id);
-	print_string((char *)"] ");
+	print_string("id : [");
+	print_integer(d->id);
+	print_string("] ");
 
 	switch (d->type)
 	{
 	case E_DOOR:
-		print_string((char *)"door");
+		print_string("door");
 		break;
 	case E_GUN:
-		print_string((char *)"gun");
+		print_string("gun");
 		break;
 	case E_KEY:
-		print_string((char *)"key");
+		print_string("key");
 		break;
 	case E_KNIFE:
-		print_string((char *)"kniffe");
+		print_string("kniffe");
 		break;
 	default:
 		break;

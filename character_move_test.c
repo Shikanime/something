@@ -24,25 +24,25 @@ void move_west_right(character_t *c);
 
 void describe_movement()
 {
-	character_should((char *)"move north backward", move_north_backward);
-	character_should((char *)"move north forward", move_north_forward);
-	character_should((char *)"move north left", move_north_left);
-	character_should((char *)"move north right", move_north_right);
+	character_should("move north backward", move_north_backward);
+	character_should("move north forward", move_north_forward);
+	character_should("move north left", move_north_left);
+	character_should("move north right", move_north_right);
 
-	character_should((char *)"move south backward", move_south_backward);
-	character_should((char *)"move south forward", move_south_forward);
-	character_should((char *)"move south left", move_south_left);
-	character_should((char *)"move south right", move_south_right);
+	character_should("move south backward", move_south_backward);
+	character_should("move south forward", move_south_forward);
+	character_should("move south left", move_south_left);
+	character_should("move south right", move_south_right);
 
-	character_should((char *)"move east backward", move_east_backward);
-	character_should((char *)"move east forward", move_east_forward);
-	character_should((char *)"move east left", move_east_left);
-	character_should((char *)"move east right", move_east_right);
+	character_should("move east backward", move_east_backward);
+	character_should("move east forward", move_east_forward);
+	character_should("move east left", move_east_left);
+	character_should("move east right", move_east_right);
 
-	character_should((char *)"move west backward", move_west_backward);
-	character_should((char *)"move west forward", move_west_forward);
-	character_should((char *)"move west left", move_west_left);
-	character_should((char *)"move west right", move_west_right);
+	character_should("move west backward", move_west_backward);
+	character_should("move west forward", move_west_forward);
+	character_should("move west left", move_west_left);
+	character_should("move west right", move_west_right);
 }
 
 inline void move_north_backward(character_t *c)

@@ -5,13 +5,13 @@ void do_inventory_should(void (*test)(inventory_t *i));
 
 inline void inventory_should(const char *s, void (*test)(inventory_t *i))
 {
-	print_string((char *)"[START] - ");
-	print_string((char *)s);
+	print_string("[START] - ");
+	print_string(s);
 	print_character('\n');
 	do_inventory_should(test);
-	print_string((char *)"[END] - ");
-	print_string((char *)s);
-	print_string((char *)"\n\n");
+	print_string("[END] - ");
+	print_string(s);
+	print_string("\n\n");
 }
 
 inline void do_inventory_should(void (*test)(inventory_t *i))

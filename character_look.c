@@ -43,31 +43,31 @@ int character_look_dispatcher(character_t *c, cardinal_point_e cardinal_point,
 void do_character_look_north(character_t *target)
 {
 	target->azimuth = E_NORTH;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(target);
-	print_string((char *)"] look north.\n");
+	print_string("] look north.\n");
 }
 
 void do_character_look_south(character_t *target)
 {
 	target->azimuth = E_SOUTH;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(target);
-	print_string((char *)"] look south.\n");
+	print_string("] look south.\n");
 }
 
 void do_character_look_east(character_t *target)
 {
 	target->azimuth = E_EAST;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(target);
-	print_string((char *)"] look east.\n");
+	print_string("] look east.\n");
 }
 
 void do_character_look_west(character_t *target)
 {
 	target->azimuth = E_WEST;
-	print_string((char *)"id : [");
+	print_string("id : [");
 	print_character_id(target);
-	print_string((char *)"] look west.\n");
+	print_string("] look west.\n");
 }

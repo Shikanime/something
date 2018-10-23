@@ -11,11 +11,11 @@ void look(character_t *c);
 
 void describe_look()
 {
-	character_should((char *)"look north", look_north);
-	character_should((char *)"look east", look_east);
-	character_should((char *)"look south", look_south);
-	character_should((char *)"look west", look_west);
-	character_should((char *)"look", look);
+	character_should("look north", look_north);
+	character_should("look east", look_east);
+	character_should("look south", look_south);
+	character_should("look west", look_west);
+	character_should("look", look);
 }
 
 inline void look_north(character_t *c)

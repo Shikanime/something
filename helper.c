@@ -26,7 +26,7 @@ void print_integer(int n)
 		if (n < 0)
 		{
 			print_character('-');
-			n *= (int)-1;
+			n *= -1;
 		}
 		if (n < 10)
 		{

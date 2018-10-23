@@ -23,7 +23,7 @@ inline void delete_character(character_t *c)
 
 void print_character_id(character_t *c)
 {
-	print_integer((int)c->id);
+	print_integer(c->id);
 }
 
 void print_character_coord_x(character_t *c)
